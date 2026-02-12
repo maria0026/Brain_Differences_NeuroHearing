@@ -1,2 +1,4 @@
 *.csv
 /data
+/src/braindiff.egg-info
+/build
