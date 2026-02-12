@@ -12,13 +12,14 @@ class DataPreprocessor:
         df_aseg = pd.read_csv('data/original/ASEG.csv', sep=None, engine='python')
         aseg_list_diff = list(set(aseg_list) - set(df_aseg.columns))
         self.data = self.data.drop(columns=aseg_list_diff)
-        
+
 
     def filter_data(self):
         self.data = self.data.dropna(how='all').copy() #drop rows where all values are NaN
         self.data = self.data[self.data['IF_FIRST'] == 1] #only first examiation
         self.data['age'] = pd.to_numeric(self.data['age'], errors='coerce') 
         self.data = self.data[(self.data['age'] >= 0) & (self.data['age'] <= 100)]
+        #d
 
 
     def choose_examinations_with_mri_after(self):
