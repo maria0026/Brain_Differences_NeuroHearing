@@ -1,1 +1,3 @@
 mrihearingdata: data/mri_niedosluchy/
+asegfile: data/original/ASEG.csv
+output_path: results/brain_structures_hearing/
